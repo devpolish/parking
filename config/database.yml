@@ -1,0 +1,34 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  username: postgres
+  host: localhost
+  password: <%= ENV['POSTGRESQL_PASSWORD'] || '' %>
+
+development:
+  <<: *default
+  database: parking_development
+
+test:
+  <<: *default
+  username: <%= ENV['TEST_POSTGRES_USER'] %>
+  password: <%= ENV['TEST_POSTGRES_PASS'] %>
+  database: parking_test
+
+staging:
+  <<: *default
+  database: parking_staging
+  username: <%= ENV['STAGING_POSTGRES_USER'] %>
+  password: <%= ENV['STAGING_POSTGRES_PASS'] %>
+  port: 5433
+  host: localhost
+
+production:
+  <<: *default
+  database: parking_production
+  username: <%= ENV['PRODUCTION_POSTGRES_USER'] %>
+  password: <%= ENV['PRODUCTION_POSTGRES_PASS'] %>
+  port: 5432
+  host: <%= ENV['PRODUCTION_POSTGRES_HOST'] %>

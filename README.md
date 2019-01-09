@@ -1,8 +1,8 @@
 # Parking 
 
-*"El parqueadero hipotético ParkingHRS, requiere un desarrollo tipo sistema de información donde pueda tener un control de la operación diaria de vehículos en el parqueadero, la idea esencial es tener servicios API REST (JSON) funcionales y documentados para poder suministrarlos al equipo Front End de la compañía."*
+* "El parqueadero hipotético ParkingHRS, requiere un desarrollo tipo sistema de información donde pueda tener un control de la operación diaria de vehículos en el parqueadero, la idea esencial es tener servicios API REST (JSON) funcionales y documentados para poder suministrarlos al equipo Front End de la compañía."*
 
-## Test's notes 
+## Test's notes
 
 In this example, the main requirement indicates that first of all you shouldn't implement a SQL model (Even when PostgreSQL) supports it.
 
@@ -25,14 +25,13 @@ Regarding to  (A screen to show with current vehicles in our parking place) I th
 [Ruby magic comment](https://medium.com/bit-concept/ruby-about-deep-symbolize-keys-and-frozen-string-literal-true-e773725549ad)
 
 ## Entities
-  * **Owner** 
-    
+
+  * **Owner**
     * name (string)
     * document_type (integer: enum type)
     * document (integer)
   
   * **Vehicle**
-    
     * owner_id (PK FK)
     * identifier (integer)
     * kind (integer: enum type)
