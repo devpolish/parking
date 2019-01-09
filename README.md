@@ -6,7 +6,7 @@
 
 In this example, the main requirement indicates that first of all you shouldn't implement a SQL model (Even when PostgreSQL) supports it.
 
-The main reason why you shouldn’t do that is because of data type structure. Anyways, I could implement something such as ScyllaDB or MongoDB, but, due to I don’t have any paid-service to implement it.
+The main reason why you shouldn’t do that is because of data type structure. Anyways, I could implement something such as ScyllaDB or MongoDB, but, I won't be able to implement due to I don’t have any paid-service.
 
 There also are several errors in the test itself, whereby it specifics an entity called “Vehicle” and you’re not taking in consideration that a vehicle could be a bike too, even a Scooter!
 
