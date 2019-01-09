@@ -1,6 +1,6 @@
 # Parking 
 
-* "El parqueadero hipotético ParkingHRS, requiere un desarrollo tipo sistema de información donde pueda tener un control de la operación diaria de vehículos en el parqueadero, la idea esencial es tener servicios API REST (JSON) funcionales y documentados para poder suministrarlos al equipo Front End de la compañía."*
+*"El parqueadero hipotético ParkingHRS, requiere un desarrollo tipo sistema de información donde pueda tener un control de la operación diaria de vehículos en el parqueadero, la idea esencial es tener servicios API REST (JSON) funcionales y documentados para poder suministrarlos al equipo Front End de la compañía."*
 
 ## Test's notes
 
