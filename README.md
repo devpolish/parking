@@ -23,3 +23,21 @@ Regarding to  (A screen to show with current vehicles in our parking place) I th
 [Keep your objects immutable](https://medium.com/@nardonykolyszyn/keep-your-objects-immutable-f8a1b757c911) 
 
 [Ruby magic comment](https://medium.com/bit-concept/ruby-about-deep-symbolize-keys-and-frozen-string-literal-true-e773725549ad)
+
+## Entities
+  * **Owner** 
+    
+    * name (string)
+    * document_type (integer: enum type)
+    * document (integer)
+  
+  * **Vehicle**
+    
+    * owner_id (PK FK)
+    * identifier (integer)
+    * kind (integer: enum type)
+  
+  * **ParkTime**
+    * vehicle_id (PK FK)
+    * code (string)
+    * cost_per_min (float)
