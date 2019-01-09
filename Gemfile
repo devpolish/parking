@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) { |repo| 'https://github.com/#{repo}.git' }
 
 ruby '2.5.1'
 
@@ -45,6 +45,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'rspec-expectations'
   gem 'pry-rails'
+  gem 'annotate', '~> 2.7'
+  gem 'rails-erd', '~> 1.5'
+  gem 'rack-test', '~> 1.1'
+  gem 'factory_bot_rails', '~> 4.11'
 end
 
 group :development do
@@ -56,12 +60,5 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+gem 'active_model_serializers', '~> 0.10.8', require: true
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem "annotate", "~> 2.7"
-
-gem "rails-erd", "~> 1.5"
-
-gem "active_model_serializers", "~> 0.10.8", require: true
