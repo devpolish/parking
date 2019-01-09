@@ -17,3 +17,9 @@ We already have a Owner entity which has many vehicles, that’s great, but havi
 O(2^n) n stands for data collection size of ParkTime for each vehicle.
 
 Regarding to  (A screen to show with current vehicles in our parking place) I though you meant a static file such as HTML, SLIM, HAML extension. If it is, that basically breaks all rules of this test, so, I decided to implement a functional end-point instead.
+
+## Performance tips
+
+[Keep your objects immutable](https://medium.com/@nardonykolyszyn/keep-your-objects-immutable-f8a1b757c911) 
+
+[Ruby magic comment](https://medium.com/bit-concept/ruby-about-deep-symbolize-keys-and-frozen-string-literal-true-e773725549ad)
