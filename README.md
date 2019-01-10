@@ -18,6 +18,8 @@ O(2^n) n stands for data collection size of ParkTime for each vehicle.
 
 Regarding to  (A screen to show with current vehicles in our parking place) I though you meant a static file such as HTML, SLIM, HAML extension. If it is, that basically breaks all rules of this test, so, I decided to implement a functional end-point instead.
 
+In a taxis company based, where having a lot of promotional codes for the same service could be a interesting idea, here, just having a whole model or independent identity dedicated to handle with all parking codes hasn’t any sense, therefore, that’s the reason there is not any end-point to process a vehicle using its invoice’s code, I implemented custom instance methods to get the current invoice and cancel it using the vehicle’s identifier (Which is required).
+
 ## Performance tips
 
 [Keep your objects immutable](https://medium.com/@nardonykolyszyn/keep-your-objects-immutable-f8a1b757c911) 
