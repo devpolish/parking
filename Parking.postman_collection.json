@@ -1,0 +1,844 @@
+{
+	"info": {
+		"_postman_id": "82969787-d6ed-43db-8ad1-b89f3cc22210",
+		"name": "Parking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Vehicles",
+			"item": [
+				{
+					"name": "GET /parking/vehicles?all_vehicles=true",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/parking/vehicles?all_vehicles=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"parking",
+								"vehicles"
+							],
+							"query": [
+								{
+									"key": "all_vehicles",
+									"value": "true"
+								}
+							]
+						},
+						"description": "It returns every single vehicle previously parked."
+					},
+					"response": [
+						{
+							"name": "GET /parking/vehicles?all_vehicles=true",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/parking/vehicles?all_vehicles=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"parking",
+										"vehicles"
+									],
+									"query": [
+										{
+											"key": "all_vehicles",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14bfd1ecf6c1c606bb1b063662ba860a\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "38648317-2fd9-4014-babe-c72348b58df3"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.008490"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"kind\": \"truck\",\n        \"identifier\": \"43734623234\",\n        \"owner_id\": 1,\n        \"created_at\": \"2019-01-10T15:58:22.123Z\",\n        \"updated_at\": \"2019-01-10T15:58:22.123Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "GET /parking/vehicles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/parking/vehicles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"parking",
+								"vehicles"
+							]
+						},
+						"description": "It returns all current vehicles parked"
+					},
+					"response": [
+						{
+							"name": "GET /parking/vehicles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/parking/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"parking",
+										"vehicles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14bfd1ecf6c1c606bb1b063662ba860a\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "6eef5869-2b4c-4192-b813-06207d2a0cf5"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.016577"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"kind\": \"truck\",\n        \"identifier\": \"43734623234\",\n        \"owner_id\": 1,\n        \"created_at\": \"2019-01-10T15:58:22.123Z\",\n        \"updated_at\": \"2019-01-10T15:58:22.123Z\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Owners",
+			"item": [
+				{
+					"name": "Vehicles",
+					"item": [
+						{
+							"name": "POST /owners/:owner_document/vehicles",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "6fff4587-4363-4e04-a95b-0cf7084b687d",
+										"exec": [
+											"pm.globals.set(\"owner_document\", \"3487437834\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"vehicle\": {\n\t\t\"kind\": \"car\",\n\t\t\"identifier\": 93339999\n\t}\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/owners/{{owner_document}}/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"owners",
+										"{{owner_document}}",
+										"vehicles"
+									]
+								},
+								"description": "It creates a new owner, if already exists, then returns the object."
+							},
+							"response": [
+								{
+									"name": "POST /owners",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"vehicle\": {\n\t\t\"kind\": \"car\",\n\t\t\"identifier\": 9999999\n\t}\n}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/v1/owners/{{owner_document}}/vehicles",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"owners",
+												"{{owner_document}}",
+												"vehicles"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"eac411e502bb03694cb88dd34ee56007\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "64b8a637-0bfa-4834-98ae-eba592cff017"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.033460"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": null,\n    \"kind\": \"car\",\n    \"identifier\": \"3223332\",\n    \"owner_id\": 2,\n    \"created_at\": null,\n    \"updated_at\": null\n}"
+								},
+								{
+									"name": "POST /owners/:owner_document/vehicles",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"vehicle\": {\n\t\t\"kind\": \"car\",\n\t\t\"identifier\": 93339999\n\t}\n}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/v1/owners/{{owner_document}}/vehicles",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"owners",
+												"{{owner_document}}",
+												"vehicles"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"43970fe2dc052a6743c91ef1c7a7c535\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "05922d69-89e6-4fc8-81fc-ce625fb8aa3d"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.010616"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 6,\n    \"kind\": \"car\",\n    \"identifier\": \"93339999\",\n    \"owner_id\": 3,\n    \"created_at\": \"2019-01-10T17:05:20.714Z\",\n    \"updated_at\": \"2019-01-10T17:05:20.714Z\"\n}"
+								},
+								{
+									"name": "POST /owners/:owner_document/vehicles",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"vehicle\": {\n\t\t\"kind\": \"car\",\n\t\t\"identifier\": 3223332\n\t}\n}"
+										},
+										"url": {
+											"raw": "http://localhost:3000/api/v1/owners/{{owner_document}}/vehicles",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "3000",
+											"path": [
+												"api",
+												"v1",
+												"owners",
+												"{{owner_document}}",
+												"vehicles"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Permitted-Cross-Domain-Policies",
+											"value": "none"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"eac411e502bb03694cb88dd34ee56007\""
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "X-Request-Id",
+											"value": "31677951-181e-42f7-b7f7-2e61b7bb993c"
+										},
+										{
+											"key": "X-Runtime",
+											"value": "0.022885"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": null,\n    \"kind\": \"car\",\n    \"identifier\": \"3223332\",\n    \"owner_id\": 2,\n    \"created_at\": null,\n    \"updated_at\": null\n}"
+								}
+							]
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "POST /owners",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"owner\": {\n\t\t\"name\": \"Nardo Nykolyszyn\",\n\t\t\"document\": 3487437834,\n\t\t\"document_type\": \"CE\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/owners",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"owners"
+							]
+						},
+						"description": "It creates a new Owner or returns an existent one."
+					},
+					"response": [
+						{
+							"name": "POST /owners",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"owner\": {\n\t\t\"name\": \"Nardo Nykolyszyn\",\n\t\t\"document\": 3487437834,\n\t\t\"document_type\": \"CE\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/owners",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"owners"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9b500cfd2c85ba876b8c3c00732f854f\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "c9332923-8903-4ffe-bee2-bb4077cf910a"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.023365"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Owner is already created\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Parking",
+			"item": [
+				{
+					"name": "POST /parking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"vehicle_identifier\": \"43734623234\",\n\t\"cost_per_minute\": 238.33\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/parking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"parking"
+							]
+						},
+						"description": "It creates a new ParkingTime, it means that a new vehicle is get into our parking place."
+					},
+					"response": [
+						{
+							"name": "POST /parking",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"vehicle_identifier\": \"43734623234\",\n\t\"cost_per_minute\": 238.33\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/parking",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"parking"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "strict-origin-when-cross-origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"778e4e5cdb85a4de247aad60604af493\""
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate"
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "ff42927b-bf49-4968-bc35-cd31a4dc1afd"
+								},
+								{
+									"key": "X-Runtime",
+									"value": "0.028156"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 27,\n    \"total_price\": 2520,\n    \"elapsed_minutes\": 21,\n    \"processed\": false,\n    \"code\": \"1c5a3236\",\n    \"cost_per_min\": 120,\n    \"vehicle\": {\n        \"id\": 1,\n        \"kind\": \"truck\",\n        \"identifier\": \"43734623234\",\n        \"owner_id\": 1,\n        \"created_at\": \"2019-01-10T15:58:22.123Z\",\n        \"updated_at\": \"2019-01-10T15:58:22.123Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "PATCH/PUT /api/v1/parking/:vehicle_identifier",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cost_per_min\": 3,\n\t\"processed\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/parking/43734623234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"parking",
+								"43734623234"
+							]
+						},
+						"description": "It updates a ParkTime"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

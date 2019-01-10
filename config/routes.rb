@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :parking, only: :create
+      resources :parking, only: %i[create update], param: :vehicle_identifier
 
       resources :owners, only: :create, param: :document, path: :owners do
         resources :vehicles, only: %i[create show], controller: 'owners/vehicles'

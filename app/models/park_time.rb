@@ -32,6 +32,13 @@ class ParkTime < ApplicationRecord
     end
   end
 
+  # It returns all current vehicles parked.
+  def self.current_vehicles_parked
+    ParkTime.where(processed: false).map(&:vehicle)
+  end
+
+  # If cost_per_min is not taken on create.
+  # Then a default price is provided.
   def assign_default_price
     self.cost_per_min = 120
   end

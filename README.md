@@ -18,11 +18,15 @@ O(2^n) n stands for data collection size of ParkTime for each vehicle.
 
 Regarding to  (A screen to show with current vehicles in our parking place) I though you meant a static file such as HTML, SLIM, HAML extension. If it is, that basically breaks all rules of this test, so, I decided to implement a functional end-point instead.
 
+In a taxis company based, where having a lot of promotional codes for the same service could be a interesting idea, here, just having a whole model or independent identity dedicated to handle with all parking codes hasn’t any sense, therefore, that’s the reason there is not any end-point to process a vehicle using its invoice’s code, I implemented custom instance methods to get the current invoice and cancel it using the vehicle’s identifier (Which is required).
+
 ## Performance tips
 
 [Keep your objects immutable](https://medium.com/@nardonykolyszyn/keep-your-objects-immutable-f8a1b757c911) 
 
 [Ruby magic comment](https://medium.com/bit-concept/ruby-about-deep-symbolize-keys-and-frozen-string-literal-true-e773725549ad)
+
+**Rubocop passed.**
 
 ## Entities
 
@@ -33,10 +37,113 @@ Regarding to  (A screen to show with current vehicles in our parking place) I th
   
   * **Vehicle**
     * owner_id (PK FK)
-    * identifier (integer)
+    * identifier (string)
     * kind (integer: enum type)
   
   * **ParkTime**
     * vehicle_id (PK FK)
     * code (string)
     * cost_per_min (float)
+    
+ ## Usage
+ 
+ ### Owners
+   - Create a new owner
+   **POST /api/v1/owners/**
+   ```json
+        "owner": {
+            "name": "Nardo Nykolyszyn",
+            "document_type": "CE",
+            "document": 4376453
+        }
+   ```
+   
+   Supported document types
+   
+   ```
+        "CE", "CC", "NIT"
+   ```
+   
+   ##### Responses
+   
+   **Success** Returns the object itself
+   
+   **Error**
+   
+   ```json
+        { "error": "Owner is already created'" }
+   ```
+   
+   - Add a vehicle to an existing owner
+   
+   **POST /api/v1/owners/:owner_document/vehicles**
+
+   ```json
+        "vehicle": {
+            "identifier": "32498327432",
+            "kind": "car"
+        }
+   ```
+   Identifier can be any mix of letters or numbers, the following attributes are supported to **kind** attribute.
+   ```ruby
+        types = [:car, :truck, :bicycle, :motorcycle, :scooter]
+   ```
+   
+   ##### Responses
+   **Success** Returns the object itself  
+   
+   **Error**
+    
+```json
+    { "error": "Vehicle is already created" }
+```
+
+### Vehicles
+
+**GET /api/v1/parking/vehicles?all=true**
+
+It returns every single vehicle previously parked.
+
+**GET /api/v1/parking/vehicles**
+
+It returns just current vehicles parked.
+
+
+### Parking
+
+**POST /api/v1/parking/**
+
+Get in a new vehicle
+
+```json
+  "vehicle_identifier": "4373474343",
+  "cost_per_min": 387.32
+```
+
+**cost_per_min** could be an integer or float type, however, if this attribute is not provided, then default cost_per_min is 120.
+
+**vehicle_identifier** is required anytime
+
+
+
+**UPDATE /api/v1/parking/:vehicle_identifier**
+
+Update an existing ParkTime, if vehicle is not in parking, then returns an error message, if vehicle doesn't exist also returns another custom message.
+
+```json
+  "vehicle_identifier": "4373474343",
+  "cost_per_min": 387.32,
+  "processed": true
+```
+
+You can also fullfill a ParkTime cycle, updating **processed** attribute.
+
+
+## Checkout
+
+**GET api/v1/owners/:owner_document/checkout**
+
+Returns total cost to pay
+
+
+
