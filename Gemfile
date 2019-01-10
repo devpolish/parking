@@ -44,6 +44,7 @@ group :development, :test do
   gem 'rspec-core'
   gem 'rspec-rails', '~> 3.8'
   gem 'rspec-expectations'
+  gem 'rspec-json_expectations'
   gem 'pry-rails'
   gem 'annotate', '~> 2.7'
   gem 'rails-erd', '~> 1.5'
