@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Vehicle < ApplicationRecord
-  enum kind: %i[car truck bicycle motorcycle]
+  enum kind: %i[car truck bicycle motorcycle scooter]
   belongs_to :owner
   has_many :park_times
 
