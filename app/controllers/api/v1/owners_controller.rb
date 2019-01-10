@@ -12,7 +12,7 @@ module Api
         if @owner.persisted?
           message = { error: 'Owner is already created' }
         else
-          @owner.save
+          @owner.save!
           message = @owner
         end
         render json: message, status: :ok

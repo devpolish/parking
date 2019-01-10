@@ -4,6 +4,7 @@ describe Api::V1::OwnersController, type: :controller do
   # Fixtures
   let(:payload) { { owner: { name: 'Nardo Nykolyszyn', document_type: 'CE', document: 4874435534} }}
   let(:payload_missing_document_type) { { owner: { name: 'Nardo Nykolyszyn', document_type: 43, document: 4874435534} }}
+  let(:payload_missing_name) { { owner: { document_type: 'CE', document: 4874435534} }}
 
   context 'errors testing' do
     it 'should an unprocessable entity when payload is empty' do
@@ -20,6 +21,13 @@ describe Api::V1::OwnersController, type: :controller do
       post :create, params: payload_missing_document_type
       expect(response.body).to include_json(
         errors: "'43' is not a valid document_type"
+      )
+    end
+
+    it 'expect to throw an error when name attribute is missing' do
+      post :create, params: payload_missing_name
+      expect(response.body).to include_json(
+        errors: "Validation failed: Name can't be blank"
       )
     end
   end

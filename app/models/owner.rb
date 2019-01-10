@@ -18,7 +18,7 @@ class Owner < ApplicationRecord
   has_many :park_times, through: :vehicles
 
   validates :document, uniqueness: true
-  validates_presence_of :document, :document_type
+  validates_presence_of :document, :document_type, :name
 
   def current_park_time
     park_times.find_by(processed: false)
