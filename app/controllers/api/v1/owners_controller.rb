@@ -6,7 +6,7 @@ module Api
       def create
         @owner = Owner.find_or_initialize_by(owner_params)
         if @owner.persisted?
-          render json: { error: 'Owner is already created'}, status: :unprocessable_entity
+          render json: { error: 'Owner is already created' }, status: :unprocessable_entity
         else
           @owner.save
           render json: @owner, status: :ok
@@ -16,7 +16,7 @@ module Api
       end
 
       private
-      
+
       def owner_params
         params.require(:owner).permit(:name, :document_type, :document)
       end
