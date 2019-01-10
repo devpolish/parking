@@ -108,7 +108,7 @@ In a taxis company based, where having a lot of promotional codes for the same s
 
 ### Vehicles
 
-**GET /api/v1/parking/vehicles?all=true**
+**GET /api/v1/parking/vehicles?all_vehicles=true**
 
 It returns every single vehicle previously parked.
 
