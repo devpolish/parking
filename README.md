@@ -2,6 +2,13 @@
 
 *"El parqueadero hipotético ParkingHRS, requiere un desarrollo tipo sistema de información donde pueda tener un control de la operación diaria de vehículos en el parqueadero, la idea esencial es tener servicios API REST (JSON) funcionales y documentados para poder suministrarlos al equipo Front End de la compañía."*
 
+## Applied principles
+
+Single responsibility principle (Each model handle its own logic)
+Interface segregation principle (Methods are split into different classes)
+
+GoF principles: Proxy, Adapter, Iterator, Composite
+
 ## Test's notes
 
 In this example, the main requirement indicates that first of all you shouldn't implement a SQL model (Even when PostgreSQL) supports it.
