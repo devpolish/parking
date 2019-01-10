@@ -1,13 +1,14 @@
-# Parking [![Build Status](https://travis-ci.com/devpolish/parking.svg?branch=master)](https://travis-ci.com/devpolish/parking)
+# Parking [![Build Status](https://travis-ci.com/devpolish/parking.svg?branch=master)](https://travis-ci.com/devpolish/parking) [![Maintainability](https://api.codeclimate.com/v1/badges/1a477e7487648f2c7612/maintainability)](https://codeclimate.com/github/devpolish/parking/maintainability)
 
 *"El parqueadero hipotético ParkingHRS, requiere un desarrollo tipo sistema de información donde pueda tener un control de la operación diaria de vehículos en el parqueadero, la idea esencial es tener servicios API REST (JSON) funcionales y documentados para poder suministrarlos al equipo Front End de la compañía."*
 
 ## Applied principles
 
 Single responsibility principle (Each model handle its own logic)
+
 Interface segregation principle (Methods are split into different classes)
 
-GoF principles: Proxy, Adapter, Iterator, Composite
+**GoF principles: Proxy, Adapter, Iterator, Composite**
 
 ## Test's notes
 
