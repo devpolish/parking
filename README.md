@@ -24,6 +24,8 @@ Regarding to  (A screen to show with current vehicles in our parking place) I th
 
 [Ruby magic comment](https://medium.com/bit-concept/ruby-about-deep-symbolize-keys-and-frozen-string-literal-true-e773725549ad)
 
+**Rubocop passed.**
+
 ## Entities
 
   * **Owner**
