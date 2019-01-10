@@ -10,9 +10,6 @@
 #  owner_id   :bigint(8)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#
-
-
 describe Vehicle, type: :model do
   let(:vehicle) { build(:vehicle) }
   let(:wrong_vehicle_kind) { build(:vehicle, kind: 'monster_truck') }

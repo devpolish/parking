@@ -11,7 +11,6 @@
 #  vehicle_id   :bigint(8)
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#
 class ParkTime < ApplicationRecord
   # As there is a not-null constraint for code attribute
   # This callback provides a new code before all validation are called.

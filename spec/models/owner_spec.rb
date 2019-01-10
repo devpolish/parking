@@ -11,9 +11,7 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
-
-
-RSpec.describe Owner, type: :model do
+describe Owner, type: :model do
   before(:all) do
     let(:owner) { create(:owner) }
   end
