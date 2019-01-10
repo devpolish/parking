@@ -4,6 +4,8 @@ FactoryBot.define do
   factory :owner do
     name 'Nardo Nykolyszyn'
     document_type 'CE'
-    document '34834344432734'
+    factory :sample_owner do
+      document { Faker::IDNumber.unique.spanish_citizen_number }
+    end
   end
 end

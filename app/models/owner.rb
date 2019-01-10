@@ -1,5 +1,16 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: owners
+#
+#  id            :bigint(8)        not null, primary key
+#  name          :string
+#  document      :string
+#  document_type :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
 class Owner < ApplicationRecord
   enum document_type: %i[CC CE NIT]
 
