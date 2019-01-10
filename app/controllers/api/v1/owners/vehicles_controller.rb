@@ -5,8 +5,13 @@ module Api
     class Owners::VehiclesController < ApplicationController
       def create
         @owner = Owner.find_by(document: params[:owner_document])
-        @vehicle = @owner.vehicles.find_or_create_by(vehicle_params)
-        message = @vehicle.persisted? ? { error: 'Vehicle is already created' } : @vehicle
+        @vehicle = @owner.vehicles.find_or_initialize_by(vehicle_params)
+        if @vehicle.persisted?
+          message = { error: 'Vehicle is already created' }
+        else
+          @vehicle.save
+          message = @vehicle
+        end
         render json: message, status: :ok
       end
 

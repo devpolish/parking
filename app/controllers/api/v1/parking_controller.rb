@@ -21,7 +21,8 @@ module Api
       def update
         @vehicle = Vehicle.find_by(identifier: params[:vehicle_identifier])
         if @vehicle.present?
-          park_time = @vehicle.park_times.find_or_create_by(processed: false)
+          park_time = @vehicle.park_times.find_by(processed: false)
+          render json: { error: 'This vehicle is not in the parking' } and return unless park_time.present?
           park_time.assign_attributes(
             cost_per_min: params[:cost_per_min],
             processed: params[:processed]
