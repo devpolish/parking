@@ -35,10 +35,63 @@ Regarding to  (A screen to show with current vehicles in our parking place) I th
   
   * **Vehicle**
     * owner_id (PK FK)
-    * identifier (integer)
+    * identifier (string)
     * kind (integer: enum type)
   
   * **ParkTime**
     * vehicle_id (PK FK)
     * code (string)
     * cost_per_min (float)
+    
+ ## Usage
+ 
+ ### Owners
+   - Create a new owner
+   **POST /api/v1/owners/**
+   ```json
+        "owner": {
+            "name": "Nardo Nykolyszyn",
+            "document_type": "CE",
+            "document": 4376453
+        }
+   ```
+   
+   Supported document types
+   
+   ```
+        "CE", "CC", "NIT"
+   ```
+   
+   ##### Responses
+   
+   **Success** Returns the object itself
+   
+   **Error**
+   
+   ```json
+        { "error": "Owner is already created'" }
+   ```
+   
+   - Add a vehicle to an existent owner
+   
+   **POST /api/v1/owners/:owner_document/vehicle**
+
+   ```json
+        "vehicle": {
+            "identifier": "32498327432",
+            "kind": "car"
+        }
+   ```
+   Identifier can be any mix of letters or numbers, the following attributes are supported to **kind** attribute.
+   ```ruby
+        types = [:car, :truck, :bicycle, :motorcycle, :scooter]
+   ```
+   
+   ##### Responses
+   **Success** Returns the object itself  
+   
+   **Error**
+    
+```json
+    { "error": "Vehicle is already created" }
+```
