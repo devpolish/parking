@@ -115,10 +115,12 @@ It returns just current vehicles parked.
 
 Get in a new vehicle
 
-```json
-  "vehicle_identifier": "4373474343",
-  "cost_per_min": 387.32
-```
+ ```json
+   {
+     "vehicle_identifier": "4373474343",
+     "cost_per_min": 387.32
+   }
+ ```
 
 **cost_per_min** could be an integer or float type, however, if this attribute is not provided, then default cost_per_min is 120.
 
@@ -130,11 +132,13 @@ Get in a new vehicle
 
 Update an existing ParkTime, if vehicle is not in parking, then returns an error message, if vehicle doesn't exist also returns another custom message.
 
-```json
-  "vehicle_identifier": "4373474343",
-  "cost_per_min": 387.32,
-  "processed": true
-```
+  ```json
+    {
+      "vehicle_identifier": "4373474343",
+      "cost_per_min": 387.32,
+      "processed": true
+    }
+  ```
 
 You can also fullfill a ParkTime cycle, updating **processed** attribute.
 
