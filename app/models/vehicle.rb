@@ -7,6 +7,7 @@ class Vehicle < ApplicationRecord
 
   validates_uniqueness_of :identifier
 
+  # Get all vehicles previosly parked.
   def self.previous_parked
     Vehicle.joins(:park_times).group('vehicles.id').order('count(vehicles.id)')
   end
