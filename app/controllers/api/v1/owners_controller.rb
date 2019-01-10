@@ -2,21 +2,26 @@
 
 module Api
   module V1
+    # Owner
+    # - name (string)
+    # - document_type (integer: enum)
+    # - document (integer)
     class OwnersController < ApplicationController
       def create
         @owner = Owner.find_or_initialize_by(owner_params)
         if @owner.persisted?
-          render json: { error: 'Owner is already created'}, status: :unprocessable_entity
+          message = { error: 'Owner is already created' }
         else
           @owner.save
-          render json: @owner, status: :ok
+          message = @owner
         end
-      rescue Exception => e
+        render json: message, status: :ok
+      rescue StandardError => e
         render json: { errors: e.message }, status: :unprocessable_entity
       end
 
       private
-      
+
       def owner_params
         params.require(:owner).permit(:name, :document_type, :document)
       end

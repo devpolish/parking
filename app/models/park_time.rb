@@ -3,10 +3,13 @@
 class ParkTime < ApplicationRecord
   # As there is a not-null constraint for code attribute
   # This callback provides a new code before all validation are called.
-  before_validation :generate_code
+  before_save :generate_code, if: :new_record?
+  before_validation :assign_default_price, unless: :cost_per_min
   belongs_to :vehicle
 
-  # validates :cost_per_min, numericality: true
+  validates_uniqueness_of :code
+  validates :cost_per_min, numericality: true
+  validates_with ParkTimeValidator, on: :create
 
   # Generate safe ParkTime code
   def generate_code
@@ -16,6 +19,10 @@ class ParkTime < ApplicationRecord
     else
       self.code = code_generated
     end
+  end
+
+  def assign_default_price
+    self.cost_per_min = 120
   end
 
   def apply_discount?
