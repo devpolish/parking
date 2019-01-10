@@ -72,9 +72,9 @@ Regarding to  (A screen to show with current vehicles in our parking place) I th
         { "error": "Owner is already created'" }
    ```
    
-   - Add a vehicle to an existent owner
+   - Add a vehicle to an existing owner
    
-   **POST /api/v1/owners/:owner_document/vehicle**
+   **POST /api/v1/owners/:owner_document/vehicles**
 
    ```json
         "vehicle": {
@@ -95,3 +95,53 @@ Regarding to  (A screen to show with current vehicles in our parking place) I th
 ```json
     { "error": "Vehicle is already created" }
 ```
+
+### Vehicles
+
+**GET /api/v1/parking/vehicles?all=true**
+
+It returns every single vehicle previously parked.
+
+**GET /api/v1/parking/vehicles**
+
+It returns just current vehicles parked.
+
+
+### Parking
+
+**POST /api/v1/parking/**
+
+Get in a new vehicle
+
+```json
+  "vehicle_identifier": "4373474343",
+  "cost_per_min": 387.32
+```
+
+**cost_per_min** could be an integer or float type, however, if this attribute is not provided, then default cost_per_min is 120.
+
+**vehicle_identifier** is required anytime
+
+
+
+**UPDATE /api/v1/parking/:vehicle_identifier**
+
+Update an existing ParkTime, if vehicle is not in parking, then returns an error message, if vehicle doesn't exist also returns another custom message.
+
+```json
+  "vehicle_identifier": "4373474343",
+  "cost_per_min": 387.32,
+  "processed": true
+```
+
+You can also fullfill a ParkTime cycle, updating **processed** attribute.
+
+
+## Checkout
+
+**GET api/v1/owners/:owner_document/checkout**
+
+Returns total cost to pay
+
+
+
