@@ -1,11 +1,26 @@
 # frozen_string_literal: true
 
+# == Schema Information
+#
+# Table name: vehicles
+#
+#  id         :bigint(8)        not null, primary key
+#  kind       :integer
+#  identifier :string
+#  owner_id   :bigint(8)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 class Vehicle < ApplicationRecord
   enum kind: %i[car truck bicycle motorcycle scooter]
   belongs_to :owner
   has_many :park_times
 
-  validates_uniqueness_of :identifier
+  validates :identifier, presence: true, uniqueness: true
+
+  def current_park_time
+    park_times.where('park_times.processed = false')
+  end
 
   # Get all vehicles previosly parked.
   def self.previous_parked

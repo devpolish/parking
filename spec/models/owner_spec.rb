@@ -1,8 +1,19 @@
 # frozen_string_literal: true
 
-RSpec.describe Owner, type: :model do
+# == Schema Information
+#
+# Table name: owners
+#
+#  id            :bigint(8)        not null, primary key
+#  name          :string
+#  document      :string
+#  document_type :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+describe Owner, type: :model do
   before(:all) do
-    owner = create(:owner)
+    let(:owner) { create(:owner) }
   end
 
   context 'validations tests' do
