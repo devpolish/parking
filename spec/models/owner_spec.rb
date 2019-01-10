@@ -2,7 +2,7 @@
 
 RSpec.describe Owner, type: :model do
   before(:all) do
-    owner = create(:owner)
+    let(:owner) { create(:owner) }
   end
 
   context 'validations tests' do
