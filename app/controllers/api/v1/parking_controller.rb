@@ -2,26 +2,36 @@
 
 module Api
   module V1
+    # Check-in and check-out vehicle parking process.
     class ParkingController < ApplicationController
       def create
-        set_vehicle
+        # Avoid callbacks usage because can chain overlocks.
+        # Use instance methods, are easily to handle when an exception is raised.
+        # Or also implement a simple instance variable.
+        @vehicle = Vehicle.find_by(identifier: params[:vehicle_identifier])
         if @vehicle.present?
           park_time = @vehicle.park_times.find_or_create_by(processed: false)
-          park_time.cost_per_min = params[:cost_per_min]
-          park_time.processed = params[:processed]
-          park_time.save unless park_time.persisted?
-          render json: park_time, code: 200
+          message = park_time
         else
-          render json: { error: 'Please, register this vehicle before' }, code: 422
+          message = { error: 'Please, register this vehicle before' }
         end
+        render json: message, code: 200
       end
 
-      private
-
-      # Avoid callbacks usage because can chain overlocks.
-      # Use instance methods, are easily to handle when an exception is raised.
-      def set_vehicle
+      def update
         @vehicle = Vehicle.find_by(identifier: params[:vehicle_identifier])
+        if @vehicle.present?
+          park_time = @vehicle.park_times.find_or_create_by(processed: false)
+          park_time.assign_attributes(
+            cost_per_min: params[:cost_per_min],
+            processed: params[:processed]
+          )
+          park_time.save
+          message = park_time
+        else
+          message = { error: 'Please, register this vehicle before' }
+        end
+        render json: message, code: 200
       end
     end
   end
