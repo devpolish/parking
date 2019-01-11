@@ -55,7 +55,18 @@ In a taxis company based, where having a lot of promotional codes for the same s
     
  ## Usage
  
+ ### Pagination
+ 
+ By default every page will return 15 elements.
+ 
  ### Owners
+   - Retrieve all owners
+   **GET /api/v1/owners**
+   
+   You can also pass **page** param to paginate resources. i.e:
+   
+   **GET /api/v1/owners?page=2**
+
    - Create a new owner
    **POST /api/v1/owners/**
    ```json
@@ -108,13 +119,17 @@ In a taxis company based, where having a lot of promotional codes for the same s
 
 ### Vehicles
 
-**GET /api/v1/parking/vehicles?all=true**
+**GET /api/v1/parking/vehicles?all_vehicles=true**
 
 It returns every single vehicle previously parked.
 
 **GET /api/v1/parking/vehicles**
 
 It returns just current vehicles parked.
+
+You can also pass **page** param to paginate resources. i.e:
+
+**GET /api/v1/parking/vehicles?all_vehicles=true?&page=2**
 
 
 ### Parking
