@@ -40,24 +40,24 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'annotate', '~> 2.7'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails', '~> 4.11'
+  gem 'pry-rails'
+  gem 'rack-test', '~> 1.1'
+  gem 'rails-erd', '~> 1.5'
   gem 'rspec-core'
-  gem 'rspec-rails', '~> 3.8'
   gem 'rspec-expectations'
   gem 'rspec-json_expectations'
-  gem 'pry-rails'
-  gem 'annotate', '~> 2.7'
-  gem 'rails-erd', '~> 1.5'
-  gem 'rack-test', '~> 1.1'
-  gem 'factory_bot_rails', '~> 4.11'
+  gem 'rspec-rails', '~> 3.8'
 end
 
 gem 'faker'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
