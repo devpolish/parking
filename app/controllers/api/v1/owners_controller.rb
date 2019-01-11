@@ -7,6 +7,14 @@ module Api
     # - document_type (integer: enum)
     # - document (integer)
     class OwnersController < ApplicationController
+      before_action :assign_page, only: :index
+      def index
+        @owners = Owner.all
+                       .order(created_at: :desc)
+                       .paginate(page: @page, per_page: 15)
+        render json: { owners: @owners, current_page: @page }, status: :ok
+      end
+
       def create
         @owner = Owner.find_or_initialize_by(owner_params)
         if @owner.persisted?

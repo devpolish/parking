@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :parking, only: %i[create update], param: :vehicle_identifier
 
-      resources :owners, only: :create, param: :document, path: :owners do
+      resources :owners, only: %i[create index], param: :document, path: :owners do
         resources :vehicles, only: %i[create show], controller: 'owners/vehicles'
         resources :checkout, only: :index, controller: 'owners/checkout'
       end
