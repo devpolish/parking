@@ -50,8 +50,9 @@ group :development, :test do
   gem 'rails-erd', '~> 1.5'
   gem 'rack-test', '~> 1.1'
   gem 'factory_bot_rails', '~> 4.11'
-  gem 'faker'
 end
+
+gem 'faker'
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
