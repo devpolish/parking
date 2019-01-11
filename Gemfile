@@ -64,3 +64,5 @@ end
 
 gem 'active_model_serializers', '~> 0.10.8', require: true
 
+
+gem "will_paginate", "~> 3.1"

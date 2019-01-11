@@ -34,7 +34,7 @@ class ParkTime < ApplicationRecord
 
   # It returns all current vehicles parked.
   def self.current_vehicles_parked
-    ParkTime.where(processed: false).map(&:vehicle)
+    ParkTime.where(processed: false)
   end
 
   # If cost_per_min is not taken on create.
