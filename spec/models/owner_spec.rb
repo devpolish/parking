@@ -12,13 +12,11 @@
 #  updated_at    :datetime         not null
 #
 describe Owner, type: :model do
-  before(:all) do
-    let(:owner) { create(:owner) }
-  end
+  let(:owner) { build(:sample_owner, document: nil) }
 
   context 'validations tests' do
     it 'ensures document presence' do
-      expect(owner).to eq(false)
+      expect(owner.save).to eq(false)
     end
 
     it 'ensures document_type correct enum mapping' do
